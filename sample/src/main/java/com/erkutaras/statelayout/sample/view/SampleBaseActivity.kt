@@ -1,10 +1,11 @@
-package com.erkutaras.statelayout.sample
+package com.erkutaras.statelayout.sample.view
 
 import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
 import androidx.annotation.MenuRes
 import androidx.appcompat.app.AppCompatActivity
+import com.erkutaras.statelayout.sample.R
 
 /**
  * Created by erkutaras on 2.02.2019.

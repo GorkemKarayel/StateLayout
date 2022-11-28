@@ -1,4 +1,4 @@
-package com.erkutaras.statelayout.sample
+package com.erkutaras.statelayout.sample.view
 
 import android.graphics.Bitmap
 import android.os.Bundle
@@ -8,24 +8,22 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
 import com.erkutaras.statelayout.StateLayout
+import com.erkutaras.statelayout.sample.R
 import kotlinx.android.synthetic.main.activity_state_layout_sample.*
 
-/**
- * Created by erkutaras on 2.02.2019.
- */
-private const val WEB_URL = "https://github.com/erkutaras"
+private const val WEB_URL = "http://www.erkutaras.com/"
 
-class AnimationLoadingSampleActivity : SampleBaseActivity(), StateLayout.OnStateLayoutListener {
+class StateLayoutSampleActivity : SampleBaseActivity(), StateLayout.OnStateLayoutListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_animation_loading_sample)
+        setContentView(R.layout.activity_state_layout_sample)
 
         webView.webViewClient = SampleWebViewClient(stateLayout, this)
         webView.loadUrl(WEB_URL)
     }
 
-    override fun getMenuResId(): Int = R.menu.menu_animation_loading
+    override fun getMenuResId(): Int = R.menu.menu_sample
 
     override fun onStateLayoutInfoButtonClick() {
         webView.loadUrl(WEB_URL)
@@ -46,7 +44,7 @@ class AnimationLoadingSampleActivity : SampleBaseActivity(), StateLayout.OnState
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
             super.onPageStarted(view, url, favicon)
             hasError = false
-            if (url.equals(WEB_URL)) stateLayout.loading()
+            if (url.equals(WEB_URL)) stateLayout.loadingMessage("Loading...")
             else stateLayout.loadingWithContent()
         }
 

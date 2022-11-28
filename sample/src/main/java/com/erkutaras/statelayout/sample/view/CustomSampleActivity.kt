@@ -1,13 +1,9 @@
-package com.erkutaras.statelayout.sample
+package com.erkutaras.statelayout.sample.view
 
 import android.graphics.Bitmap
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.webkit.*
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.erkutaras.statelayout.StateLayout
+import com.erkutaras.statelayout.sample.R
 import kotlinx.android.synthetic.main.activity_custom_sample.*
 import kotlinx.android.synthetic.main.layout_custom_info.*
 import kotlinx.android.synthetic.main.layout_custom_loading.*
